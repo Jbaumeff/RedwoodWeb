@@ -60,23 +60,6 @@ class DirectionsAPI {
             exit;
         }
 
-        $busNum = "-1";
-
-        try {
-            $busNum = $directions1->routes[0]->legs[0]->steps->steps->line->short_name;
-        }
-        catch (Exception $e) {
-            $busNum = "-1";
-        }
-
-        echo "<p> $busNum </p>";
-//        foreach($directions1->routes[0]->legs[0]->steps as $step) {
-//            foreach($step->duration as $time){
-//                //$transit = $transit + $time;
-//            }
-//        }
-
-
         $transitDuration = $directions1->routes[0]->legs[0]->duration->value;
         $walkingDuration = $directions2->routes[0]->legs[0]->duration->value;
 
